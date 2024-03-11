@@ -1,0 +1,72 @@
+.heroSection {
+  position: relative;
+  overflow: hidden;
+}
+.mainFulpage {
+  position: absolute;
+  top: 0;
+  background: #111011;
+  min-height: 100vh;
+  height: 200vh;
+  position: relative;
+  right: -25%;
+  overflow: hidden;
+  mask: linear-gradient(0deg, rgba(255, 97, 45, 0) 2%, rgba(0, 0, 0, 1) 18%);
+  @media (max-width: 768px) {
+    height: 100vh;
+  }
+}
+// .text {
+//   font-weight: 800;
+//   font-family: "Open Sans";
+//   position: absolute;
+//   text-transform: uppercase;
+//   max-width: 1000px;
+//   color: wheat;
+//   z-index: 1;
+//   top: 120px;
+//   left: 50px;
+//   font-size: 50px;
+// }
+.text {
+  font-weight: 800;
+  font-family: "Open Sans";
+  color: wheat;
+  position: absolute;
+  text-transform: uppercase;
+  max-width: 1200px;
+  z-index: 1;
+  top: 50px;
+  left: 50px;
+  font-size: 128px;
+
+  .focusedOn {
+    color: #e84f31;
+  }
+  @media (max-width: 1400px) {
+    font-size: 100px;
+    max-width: 1000px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 80px;
+    max-width: 800px;
+  }
+  @media (max-width: 900px) {
+    top: 0px;
+    left: 0px;
+    font-size: 70px;
+    max-width: 600px;
+    padding: 20px;
+  }
+  @media (max-width: 768px) {
+    font-size: 50px;
+    max-width: 500px;
+    //  text-align: center;
+  }
+  @media (max-width: 500px) {
+    font-size: 45px;
+  }
+  @media (max-width: 400px) {
+    font-size: 35px;
+  }
+}

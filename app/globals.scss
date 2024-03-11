@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+body {
+  background: #111011;
+
+  &::-webkit-scrollbar {
+    background: #000;
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #aea28c;
+    border-radius: 2px;
+  }
+
+  font-family: "Open Sans";
+  color: wheat;
+}
+
+//========================================================================================================================================================
+// hoverderInfo
+.hovermainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.WHenedate {
+  font-size: 64px;
+  font-weight: 200;
+  display: block;
+  margin-bottom: 30px;
+  @media (max-width: 900px) {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+.hoverderInfo {
+  margin: 0 auto;
+  max-width: 1640px;
+  position: relative;
+  p {
+    font-size: 90px;
+    font-weight: 700;
+    text-transform: uppercase;
+    span {
+      color: #e84f31;
+    }
+    @media (max-width: 1200px) {
+      font-size: 65px;
+    }
+    @media (max-width: 900px) {
+      font-size: 45px;
+    }
+    @media (max-width: 768px) {
+      font-size: 30px;
+    }
+  }
+  .main {
+    padding: 100px;
+    padding-top: 0;
+    @media (max-width: 800px) {
+      padding: 50px;
+    }
+    @media (max-width: 600px) {
+      padding: 20px;
+    }
+  }
+  .mask {
+    padding: 100px;
+    padding-top: 0;
+    cursor: default;
+    top: 0;
+    left: 0;
+    position: absolute;
+    mask-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a8/Ski_trail_rating_symbol_black_circle.png");
+    background: #e84f31;
+    mask-size: 0px;
+    mask-position: 0px 100px;
+    mask-repeat: no-repeat;
+    color: #000000;
+    span {
+      color: #000000;
+    }
+    @media (max-width: 800px) {
+      padding: 50px;
+    }
+    @media (max-width: 600px) {
+      padding: 20px;
+    }
+  }
+}
+//========================================================================================================================================================
+
+.examplesOfWorksHeading {
+  //   opacity: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}

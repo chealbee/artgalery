@@ -1,95 +1,45 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { useEffect } from "react";
+import HoverderInfo from "./components/HoverderInfo";
+import ParalxGalery from "./components/paralax galery/ParalxGalery";
+import Lenis from "@studio-freight/lenis";
+import PalaxRotaionObject from "./components/palaxRotaionObject/PalaxRotaionObject";
+import HeroSectioin from "./components/heroSection/HeroSectioin";
 
-export default function Home() {
+const Main = () => {
+  //   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0.9 });
+  //   const mainRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // smoth scroll
+    const lenis = new Lenis();
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    //  if (mainRef.current) {
+    //    mainRef.current.addEventListener("mousemove", (e) => {
+    //      if (mainRef.current) {
+    //        const x = (e.offsetX / mainRef.current.offsetWidth) * 2 - 1;
+    //        const y = -(e.offsetY / mainRef.current.offsetHeight) * 2 + 1;
+    //        setCursorPosition({ x: x, y: y }); //  const maxX = Math.min(x, 0.05);
+    //      }
+    //    });
+    //  }
+  }, []);
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <>
+      <HeroSectioin />
+      <HoverderInfo />
+      <PalaxRotaionObject />
+      {/* <BigHeading cl="examplesOfWorksHeading">
+        Приклади робіт наших студентів
+      </BigHeading> */}
+      <ParalxGalery />
+    </>
   );
-}
+};
+
+export default Main;
