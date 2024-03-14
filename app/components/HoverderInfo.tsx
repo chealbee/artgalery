@@ -26,10 +26,17 @@ function HoverderInfo() {
     <>
       <div className="hoverderInfo" ref={sadjkl} onMouseMove={handleMouseMove}>
         <div className="main">
-          <span className="WHenedate">22/2/2024</span>
+          {/* <span className="WHenedate">22/2/2024</span> */}
           <p>
-            adable content of a page when <span>looking</span> at its layout.
-            The point of using Lorem Ipsum is that it has a
+            На виставці ви зустрінете<span> різноманітні твори</span> від
+            талановитих митців, які відображають різні стилі та техніки. Від
+            класичних мармурових скульптур до сучасних абстракцій –{" "}
+            <span>кожен знайде </span>щось захоплююче для себе.
+            <br />
+            <br />
+            Приєднуйтеся до нас на цій захоплюючій події, де мистецтво оживає, а{" "}
+            <span>кожен</span> може стати його частиною. Долучайтесь до нас і
+            даруйте світу ще більше краси та творчості!
           </p>
         </div>
         <motion.div
@@ -41,13 +48,22 @@ function HoverderInfo() {
           }}
           transition={{ type: "tween", ease: "backOut" }}
         >
-          <span className="WHenedate">22/2/2024</span>
+          {/* <span className="WHenedate">22/2/2024</span> */}
           <p
-            onMouseEnter={() => setIsHovered(true)}
+            onMouseMove={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            adable content of a page when looking at its layout. The point of
-            using Lorem Ipsum is that it has a
+            <span></span>
+            На виставці ви зустрінете різноманітні <span>твори</span> від
+            талановитих <span>митців</span>, які відображають різні стилі та
+            техніки. Від класичних мармурових скульптур до сучасних абстракцій –{" "}
+            <span>кожен знайде </span>щось захоплююче для себе.
+            <br />
+            <br />
+            Приєднуйтеся до нас на цій захоплюючій події, де мистецтво оживає, а{" "}
+            <span>кожен</span> може стати його частиною.{" "}
+            <span>Долучайтесь</span> до нас і даруйте світу ще більше краси та{" "}
+            <span>творчості!</span>
           </p>
         </motion.div>
       </div>

@@ -4,29 +4,35 @@ import Paragraph from "../mainSection/Paragraph";
 import LigntComponent from "../3dElements/LightComponent";
 import Statue from "../3dElements/Statue";
 import { useEffect, useRef, useState } from "react";
-import { MotionValue, useScroll, useTransform } from "framer-motion";
+import { useScroll } from "framer-motion";
 
 const HeroSectioin = () => {
-  const [cursorPosition, setCursorPosition] = useState<{
-    x: number;
-    y: number;
-  }>({
-    x: 0,
-    y: 0.9,
-  });
+  const [cursorPositionY, setCursorPositionY] = useState(0);
+  const [cursorPositionX, setCursorPositionX] = useState(0);
   const mainRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: mainRef,
+    offset: ["start end", "end start"],
+  });
 
   useEffect(() => {
     if (mainRef.current) {
       mainRef.current.addEventListener("mousemove", (e) => {
         if (mainRef.current) {
           const x = (e.offsetX / mainRef.current.offsetWidth) * 2 - 1;
-          const y = -(e.offsetY / mainRef.current.offsetHeight) * 2 + 1;
-
-          setCursorPosition({ x: x, y: y }); //  const maxX = Math.min(x, 0.05);
+          setCursorPositionX(x);
+        }
+      });
+      window.addEventListener("scroll", (e) => {
+        if (mainRef.current) {
+          setCursorPositionY(scrollYProgress.get());
         }
       });
     }
+    //  window.addEventListener("scroll", (e) => {
+    //    setCursorPosition({ ...cursorPosition, y: scrollYProgress.get() }); //  const maxX = Math.min(x, 0.05);
+    //    console.log(scrollYProgress.get());
+    //  });
   }, []);
 
   return (
@@ -36,7 +42,7 @@ const HeroSectioin = () => {
         <div ref={mainRef} className="mainFulpage">
           <Canvas>
             {/* <OrbitControls enableZoom={false} /> */}
-            <ambientLight intensity={0.3} />
+            {/* <ambientLight intensity={5} /> */}
 
             {/* <pointLight
           position={[-0.8, 2.2, 3]}
@@ -46,8 +52,11 @@ const HeroSectioin = () => {
         /> */}
             {/* <RedLigntComponent cursorPosition={[0.8, 2.2, 2]} /> */}
             {/* <RedLigntComponent cursorPosition={[-0.2, 1, 1.6]} /> */}
-            <LigntComponent cursorPosition={cursorPosition} />
-            <Statue />
+            <LigntComponent
+              cursorPosition={{ x: cursorPositionX, y: cursorPositionY }}
+            />
+            <Statue rotation={cursorPositionY} />
+            {/* <Statue rotation={cursorPositionY} /> */}
           </Canvas>
         </div>
       </section>

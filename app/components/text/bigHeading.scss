@@ -1,8 +1,14 @@
 .bigHeading {
-  font-family: "Open Sans";
+  font-family: "Montserrat";
   font-weight: 100;
-  font-size: 88px;
+  font-size: 100px;
   line-height: 99%;
   text-transform: uppercase;
   text-align: center;
+  @media (max-width: 768px) {
+    font-size: 60px;
+  }
+  @media (max-width: 568px) {
+    font-size: 45px;
+  }
 }

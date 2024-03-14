@@ -1,0 +1,11 @@
+Model Information:
+* title:	Tritonen- und Najadenbrunnen
+* source:	https://sketchfab.com/3d-models/tritonen-und-najadenbrunnen-3b44d25ec4d142e19e58e00af8796560
+* author:	noe-3d.at (https://sketchfab.com/www.noe-3d.at)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Tritonen- und Najadenbrunnen" (https://sketchfab.com/3d-models/tritonen-und-najadenbrunnen-3b44d25ec4d142e19e58e00af8796560) by noe-3d.at (https://sketchfab.com/www.noe-3d.at) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

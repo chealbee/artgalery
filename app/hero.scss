@@ -1,15 +1,22 @@
 .heroSection {
   position: relative;
+  background: #000000;
+
   overflow: hidden;
 }
 .mainFulpage {
   position: absolute;
   top: 0;
-  background: #111011;
+  //   background: #111011;
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(17, 16, 17, 1) 0%,
+  //   rgba(0, 0, 0, 1) 30%
+  // );
   min-height: 100vh;
   height: 200vh;
   position: relative;
-  right: -25%;
+  //   right: -10%;
   overflow: hidden;
   mask: linear-gradient(0deg, rgba(255, 97, 45, 0) 2%, rgba(0, 0, 0, 1) 18%);
   @media (max-width: 768px) {
@@ -29,44 +36,67 @@
 //   font-size: 50px;
 // }
 .text {
-  font-weight: 800;
-  font-family: "Open Sans";
+  font-weight: 100;
+  text-shadow: 1px 1px 8px #000;
   color: wheat;
   position: absolute;
   text-transform: uppercase;
-  max-width: 1200px;
+  max-width: 100%;
+  text-align: center;
   z-index: 1;
   top: 50px;
-  left: 50px;
-  font-size: 128px;
-
+  //   left: 50px;
+  padding: 0 50px;
+  font-size: 125px;
+  //   .spanchik {
+  //     font-weight: 700;
+  //   }
   .focusedOn {
     color: #e84f31;
   }
+  @media (max-width: 1750px) {
+    font-size: 105px;
+  }
   @media (max-width: 1400px) {
-    font-size: 100px;
-    max-width: 1000px;
+    font-size: 85px;
   }
-  @media (max-width: 1200px) {
-    font-size: 80px;
-    max-width: 800px;
-  }
-  @media (max-width: 900px) {
-    top: 0px;
-    left: 0px;
-    font-size: 70px;
-    max-width: 600px;
-    padding: 20px;
+  @media (max-width: 1000px) {
+    font-size: 75px;
   }
   @media (max-width: 768px) {
-    font-size: 50px;
-    max-width: 500px;
-    //  text-align: center;
+    font-size: 40px;
   }
-  @media (max-width: 500px) {
-    font-size: 45px;
+  @media (max-width: 570px) {
+    font-size: 30px;
   }
   @media (max-width: 400px) {
-    font-size: 35px;
+    font-size: 28px;
+    padding: 20px;
   }
+  //   @media (max-width: 1400px) {
+  //     font-size: 100px;
+  //     max-width: 1000px;
+  //   }
+  //   @media (max-width: 1200px) {
+  //     font-size: 80px;
+  //     max-width: 800px;
+  //   }
+  //   @media (max-width: 900px) {
+  //     top: 0px;
+  //     left: 0px;
+  //     font-size: 70px;
+  //     max-width: 600px;
+  //     padding: 20px;
+  //   }
+  //   @media (max-width: 768px) {
+  //     font-size: 50px;
+  //     max-width: 500px;
+  //     //  text-align: center;
+  //   }
+  //   @media (max-width: 500px) {
+  //     font-size: 45px;
+  //   }
+  //   @media (max-width: 400px) {
+  //     font-size: 35px;
+  //   }
 }

@@ -7,8 +7,8 @@ const Paragraph = () => {
   const [isMobile, setIsMobile] = useState(false);
   const { scrollYProgress } = useScroll({
     target: element,
-    offset: ["start start", `${isMobile ? "center 0.1" : "end 0.7"}`],
-    //  offset: ["start start", "end 0.7"],
+    //  offset: ["start start", `${isMobile ? "center 0.1" : "end center"}`],
+    offset: ["start 0.9", "end 0.45"],
   });
 
   useEffect(() => {
@@ -17,14 +17,15 @@ const Paragraph = () => {
     }
   }, []);
 
-  const text =
-    " The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,as oppose";
+  const text = `Однак, ви не лише станете спостерігачем цього мистецтва – ви також матимете можливість самі створити щось унікальне. Наші майстри скульптури будуть присутні, щоб провести майстер-класи та допомогти вам втілити ваші ідеї в реальність.`;
   const words = text.split(" ");
 
   return (
     <p ref={element} className="text">
-      adable content of a page <span className="focusedOn">when looking</span>{" "}
-      at its layout.
+      {/* adable content of a page <span className="focusedOn">when looking</span>{" "}
+      at its layout. */}
+      {/* Однак, ви не лише станете <span className="focusedOn">спостерігачем</span>{" "}
+      цього мистецтва */}
       {words.map((el, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;
@@ -65,7 +66,7 @@ const World = ({
 }) => {
   const opacity = useTransform(progress, range, [0, 1]);
   return (
-    <span>
+    <span className="spanchik">
       <motion.span style={{ opacity }}>{text}</motion.span>
     </span>
   );

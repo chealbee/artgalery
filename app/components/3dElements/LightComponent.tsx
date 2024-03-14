@@ -1,7 +1,6 @@
 "use client";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { MotionValue } from "framer-motion";
 
 const LigntComponent = ({
   cursorPosition,
@@ -15,8 +14,8 @@ const LigntComponent = ({
 
   useFrame(() => {
     if (lightRef.current) {
-      lightRef.current.position.x = cursorPosition.x * 1.5;
-      lightRef.current.position.y = cursorPosition.y * 2;
+      // lightRef.current.position.x = cursorPosition.x * 1.5;
+      lightRef.current.position.y = -cursorPosition.y * 12 + 6.3;
       // lightRef.current.position.y = cursorPosition.y;
     }
   });
@@ -25,10 +24,11 @@ const LigntComponent = ({
     <>
       <pointLight
         ref={lightRef}
-        position={[cursorPosition.x, cursorPosition.y, 2.4]}
-        intensity={4}
+        position={[-0.2, 0, 3.2]}
+        intensity={10}
         distance={2}
         color="#AEA28C"
+        //   color={"white"}
       />
     </>
   );
