@@ -92,7 +92,7 @@ const Qustions = () => {
       </ul>
       <div className="SBG">
         <Canvas>
-          <ambientLight />
+          {/* <ambientLight /> */}
           {/* <pointLight position={[2, 2, 2]} intensity={10} /> */}
           <SpinningLight
             delay={0}

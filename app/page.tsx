@@ -28,7 +28,7 @@ const Main = () => {
       <ParalxGalery />
       <HeroSectioin />
       {/* <PalaxRotaionObject /> */}
-      {/* <Qustions /> */}
+      <Qustions />
       <Footer />
     </>
   );

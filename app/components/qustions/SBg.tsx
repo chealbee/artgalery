@@ -4,7 +4,8 @@ import { GLTFLoader } from "three/examples/jsm/Addons.js";
 
 const SBg = () => {
   const model = useRef<any>();
-  const mainModel = useLoader(GLTFLoader, "/daphne/scene.gltf");
+  //   const mainModel = useLoader(GLTFLoader, "/daphne/scene.gltf");
+  const unmainModel = useLoader(GLTFLoader, "/third3d/scene.gltf");
 
   useFrame(() => {
     //  model.current.rotation.y += 0.0005;
@@ -12,8 +13,8 @@ const SBg = () => {
 
   return (
     <mesh>
-      <group rotation={[0, 0, 0]} position={[0, -5, 0]} ref={model}>
-        <primitive object={mainModel.scene} scale={16.3} />
+      <group rotation={[0, 0, 0]} position={[0, -2.9, 0]} ref={model}>
+        <primitive object={unmainModel.scene} scale={12.3} />
       </group>
     </mesh>
   );

@@ -7,7 +7,8 @@ import { motion } from "framer-motion-3d";
 
 const Statue = ({ rotation }: { rotation: number }) => {
   const mainModelRef = useRef<any>();
-  const mainModel = useLoader(GLTFLoader, "/grabfigur/scene.gltf");
+  //   const mainModel = useLoader(GLTFLoader, "/grabfigur/scene.gltf");
+  const unmainModel = useLoader(GLTFLoader, "/second3d/scene.gltf");
   //   const [rotateStatue, setRotateStatue] = useState(-5);
 
   //   //   useFrame((state) => {
@@ -35,7 +36,8 @@ const Statue = ({ rotation }: { rotation: number }) => {
       position={[0, -5.5, 0]}
       rotation={[degToRad(9), degToRad(25), 0]}
     >
-      <primitive object={mainModel.scene} ref={mainModelRef} />
+      {/* <primitive object={mainModel.scene} ref={mainModelRef} /> */}
+      <primitive object={unmainModel.scene} ref={mainModelRef} />
     </motion.group>
   );
 };
