@@ -112,3 +112,14 @@ body {
     margin-top: 50px;
   }
 }
+.loading {
+  display: block;
+  background: #000000;
+  width: 100%;
+  text-transform: uppercase;
+  height: 100%;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
