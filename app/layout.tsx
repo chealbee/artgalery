@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 // If loading a variable font, you don't need to specify the font weight
-const inter = Montserrat({ subsets: ["cyrillic"] });
+const inter = Montserrat({ subsets: ["cyrillic"], display: "swap" });
 
 export default function RootLayout({
   children,

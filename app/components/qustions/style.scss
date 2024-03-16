@@ -8,6 +8,7 @@
     font-size: 120px;
     position: relative;
     cursor: default;
+
     &::before {
       z-index: 2;
       position: absolute;
@@ -30,6 +31,15 @@
         left: 0;
       }
     }
+    @media (max-width: 1166px) {
+      font-size: 80px;
+    }
+    @media (max-width: 768px) {
+      font-size: 45px;
+    }
+    @media (max-width: 550px) {
+      font-size: 25px;
+    }
   }
   &__title {
     clip-path: inset(0 0% 0 0);
@@ -37,6 +47,15 @@
     display: block;
     position: relative;
     z-index: 1;
+    @media (max-width: 1166px) {
+      padding: 30px 60px;
+    }
+    @media (max-width: 768px) {
+      padding: 30px 30px;
+    }
+    @media (max-width: 550px) {
+      padding: 20px;
+    }
   }
   &__titleShadow {
     padding: 30px 150px;
@@ -47,6 +66,15 @@
     left: 0;
     color: #3838385e;
     z-index: 1;
+    @media (max-width: 1166px) {
+      padding: 30px 60px;
+    }
+    @media (max-width: 768px) {
+      padding: 30px 30px;
+    }
+    @media (max-width: 550px) {
+      padding: 20px;
+    }
   }
   &__hover {
     padding: 30px 150px;
@@ -61,6 +89,7 @@
     left: 0;
     clip-path: inset(50% 0 50%);
     transition: clip-path 0.3s ease 0s;
+    overflow: hidden;
     &.active {
       clip-path: inset(0 0 0);
     }
@@ -68,6 +97,15 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    @media (max-width: 1166px) {
+      padding: 30px 60px;
+    }
+    @media (max-width: 768px) {
+      padding: 30px 30px;
+    }
+    @media (max-width: 550px) {
+      padding: 20px;
+    }
     span {
       &:first-child {
         flex: 0 0 60%;
@@ -78,6 +116,29 @@
         color: white;
         font-size: 15px;
       }
+
+      @media (max-width: 768px) {
+        &:first-child {
+          flex: 0 0 50%;
+        }
+        &:last-child {
+          flex: 0 0 40%;
+        }
+      }
+      @media (max-width: 768px) {
+        &:last-child {
+          font-size: 13px;
+        }
+      }
+      @media (max-width: 550px) {
+        &:first-child {
+          flex: 0 0 40%;
+        }
+        &:last-child {
+          flex: 0 0 60%;
+          font-size: 10px;
+        }
+      }
     }
   }
 }
@@ -86,6 +147,9 @@
   //   margin: 0 0 200px 0;
   position: relative;
   background: #000;
+  @media (max-width: 768px) {
+    padding: 100px 0;
+  }
 }
 .SBG {
   position: absolute;

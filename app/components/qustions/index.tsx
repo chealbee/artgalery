@@ -8,7 +8,7 @@ import {
 } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import SBg from "./SBg";
-import SpinningLight from "../3dElements/SpiningLight";
+import LigntComponent from "../3dElements/LightComponent";
 
 const Qustions = () => {
   const data = [
@@ -59,8 +59,15 @@ const Qustions = () => {
     target: list,
     offset: ["start end", `end 0.9`],
   });
+  const { scrollYProgress: lightPosition } = useScroll({
+    target: list,
+    offset: ["start end", `center 0.5`],
+  });
 
   const clipProgress = useTransform(scrollYProgress, [0, 1], [100, 0]);
+  const sad = useTransform(lightPosition, [0, 1], [5.2, 0.2]);
+  const sd = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
+  const rotateModel = useTransform(scrollYProgress, [0, 1], [-0.2, 0.2]);
 
   const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
   return (
@@ -92,16 +99,16 @@ const Qustions = () => {
       </ul>
       <div className="SBG">
         <Canvas>
-          {/* <ambientLight /> */}
-          {/* <pointLight position={[2, 2, 2]} intensity={10} /> */}
-          <SpinningLight
-            delay={0}
-            position={[0, 0.5, 0]}
-            speed={0.01}
-            side={true}
-            color={"#E84F31"}
+          <LigntComponent
+            position={{ x: 0, y: 0.2, z: 2 }}
+            motion={sad}
+            distance={2.6}
+            intensity={10}
+            boost={10}
+            motionIntensity={sd}
           />
-          <SBg />
+
+          <SBg rotate={rotateModel} />
         </Canvas>
       </div>
     </div>

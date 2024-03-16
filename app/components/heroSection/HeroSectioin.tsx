@@ -4,7 +4,7 @@ import Paragraph from "../mainSection/Paragraph";
 import LigntComponent from "../3dElements/LightComponent";
 import Statue from "../3dElements/Statue";
 import { useEffect, useRef, useState } from "react";
-import { useScroll } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
 
 const HeroSectioin = () => {
   const [cursorPositionY, setCursorPositionY] = useState(0);
@@ -14,6 +14,7 @@ const HeroSectioin = () => {
     target: mainRef,
     offset: ["start end", "end start"],
   });
+  const sa = useTransform(scrollYProgress, [0, 1], [4.5, -5]);
 
   useEffect(() => {
     if (mainRef.current) {
@@ -29,10 +30,6 @@ const HeroSectioin = () => {
         }
       });
     }
-    //  window.addEventListener("scroll", (e) => {
-    //    setCursorPosition({ ...cursorPosition, y: scrollYProgress.get() }); //  const maxX = Math.min(x, 0.05);
-    //    console.log(scrollYProgress.get());
-    //  });
   }, []);
 
   return (
@@ -41,19 +38,13 @@ const HeroSectioin = () => {
         <Paragraph />
         <div ref={mainRef} className="mainFulpage">
           <Canvas>
-            {/* <OrbitControls enableZoom={false} /> */}
-            {/* <ambientLight intensity={5} /> */}
-
-            {/* <pointLight
-          position={[-0.8, 2.2, 3]}
-          intensity={2}
-          color="#AEA28C"
-          distance={2.7}
-        /> */}
-            {/* <RedLigntComponent cursorPosition={[0.8, 2.2, 2]} /> */}
-            {/* <RedLigntComponent cursorPosition={[-0.2, 1, 1.6]} /> */}
             <LigntComponent
-              cursorPosition={{ x: cursorPositionX, y: cursorPositionY }}
+              position={{ x: -0.2, y: 0, z: 3.2 }}
+              distance={2}
+              intensity={13}
+              motion={sa}
+              //   boost={8}
+              //   motionIntensity={sd}
             />
             <Statue rotation={cursorPositionY} />
             {/* <Statue rotation={cursorPositionY} /> */}
