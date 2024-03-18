@@ -4,25 +4,13 @@ import { useRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { degToRad } from "three/src/math/MathUtils.js";
 import { motion } from "framer-motion-3d";
+import { MotionValue } from "framer-motion";
 
-const Statue = ({ rotation }: { rotation: number }) => {
+const Statue = ({ rotation }: { rotation: MotionValue<number> }) => {
   const mainModelRef = useRef<any>();
-  //   const mainModel = useLoader(GLTFLoader, "/grabfigur/scene.gltf");
   const unmainModel = useLoader(GLTFLoader, "/second3d/scene.gltf");
-  //   const [rotateStatue, setRotateStatue] = useState(-5);
-
-  //   //   useFrame((state) => {
-  //   // const bouncesing = (Math.sin(state.clock.elapsedTime) + 1) / 2;
-  //   // //  const newIntensity = bouncesing / 2;
-  //   // const rotaion = Math.min(0.9);
-
-  //   //     setRotateStatue(bouncesing * -4);
-  //   //     if (mainModelRef.current) {
-  //   //       // mainModelRef.current.rotation.y = bouncesing;
-  //   //     }
-  //   //   });
   useFrame(() => {
-    const rotaion = -rotation / 1;
+    const rotaion = -rotation.get() / 1;
 
     if (mainModelRef.current) {
       mainModelRef.current.rotation.y = rotaion;
@@ -36,7 +24,6 @@ const Statue = ({ rotation }: { rotation: number }) => {
       position={[0, -5.5, 0]}
       rotation={[degToRad(9), degToRad(25), 0]}
     >
-      {/* <primitive object={mainModel.scene} ref={mainModelRef} /> */}
       <primitive object={unmainModel.scene} ref={mainModelRef} />
     </motion.group>
   );

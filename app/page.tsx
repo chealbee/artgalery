@@ -29,6 +29,8 @@ const Main = () => {
       <HeroSectioin />
       {/* <PalaxRotaionObject /> */}
       <Qustions />
+      {/* <BigHeading cl="AboutHeading">Наша команда</BigHeading> */}
+      {/* <ParalxGalery data={team} type={2} /> */}
       <Footer />
     </>
   );

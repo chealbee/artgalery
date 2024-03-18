@@ -57,11 +57,13 @@ import { useRef } from "react";
 const LigntComponent = ({
   position,
   motion,
+  color,
   intensity,
   distance,
   motionIntensity,
   boost,
 }: {
+  color: string;
   boost?: number;
   distance: number;
   intensity: number;
@@ -94,7 +96,8 @@ const LigntComponent = ({
         position={[position.x, position.y, position.z]}
         intensity={intensity}
         distance={distance}
-        color="#AEA28C"
+        //   color="#AEA28C"
+        color={color}
       />
       {/* <pointLight
         ref={lightRef}

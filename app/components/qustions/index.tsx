@@ -13,41 +13,41 @@ import LigntComponent from "../3dElements/LightComponent";
 const Qustions = () => {
   const data = [
     {
-      title: "Ford",
+      title: "скульптури",
       description:
-        "Working on the Next-Generation HMI Experience without no driving experience.",
+        "Ви побачите вражаючі скульптурні композиції від талановитих скульпторів з усього світу. Від класичних до сучасних рішень, кожна скульптура розкаже вам свою унікальну історію.",
       speed: 0.5,
     },
     {
-      title: "UFC",
+      title: "Картини",
       description:
-        "Developed the Future of UFC Sports Ecosystem despite not being a sports fan.",
+        "У нас буде широкий вибір картин, які охоплюють різні стилі та теми. Від реалістичних пейзажів до абстрактних композицій, картина на виставці дозволить вам зануритися у світ кольорів та форм.",
       speed: 0.5,
     },
     {
-      title: "Lincoln",
+      title: "Мистецтво",
       description:
-        "Defined the visual concept and design language for the Lincoln Zephyr 2022 but never seen it in real life.",
+        "Наша виставка також представить різноманітні форми мистецтва, включаючи фотографію, графіку, інсталяції та багато іншого. Відбуваючись на перетині різних мистецьких жанрів, мистецтво на виставці буде вразливим, провокаційним та надихаючим.",
       speed: 0.67,
     },
     {
-      title: "Royal Caribbean",
+      title: "Спогади",
       description:
-        "I was just one person on a massive team that created an entire Royal Caribbean eco-system.",
+        "Відвідування мистецької виставки може стати незабутнім досвідом, який буде супроводжувати вас надовго, залишаючи незабутні враження та спогади.",
       speed: 0.8,
     },
     {
-      title: "Sleepiq",
+      title: "Нові зв'язки",
       description:
-        "Designed a 1M+ users product utilizing my best personal experience: sleeping.",
+        "Мистецька виставка є чудовим місцем для встановлення нових зв'язків та знайомств з цікавими людьми з різних сфер життя. Хто знає, можливо, ви знайдете нових друзів або партнерів для майбутніх мистецьких проєктів.",
       speed: 0.8,
     },
-    {
-      title: "NFL",
-      description:
-        "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
-      speed: 0.8,
-    },
+    //  {
+    //    title: "Спробуйте самі",
+    //    description:
+    //      "Наша виставка пропонує вам унікальну можливість не лише спостерігати за мистецтвом, а й власноруч спробувати створити щось власне. Ми організовуємо майстер-класи з скульптури, де ви зможете випробувати свої сили та виразити свою творчість під керівництвом досвідчених майстрів.",
+    //    speed: 0.8,
+    //  },
   ];
   const crop = (string: string, maxLength: number) => {
     return string.substring(0, maxLength);
@@ -66,7 +66,7 @@ const Qustions = () => {
 
   const clipProgress = useTransform(scrollYProgress, [0, 1], [100, 0]);
   const sad = useTransform(lightPosition, [0, 1], [5.2, 0.2]);
-  const sd = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
+  const sd = useTransform(scrollYProgress, [0, 1], [0.1, 0.5]);
   const rotateModel = useTransform(scrollYProgress, [0, 1], [-0.2, 0.2]);
 
   const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
@@ -105,6 +105,9 @@ const Qustions = () => {
             distance={2.6}
             intensity={10}
             boost={10}
+            // color="#e84f31"
+            // color="white"
+            color="#bdaa87"
             motionIntensity={sd}
           />
 
